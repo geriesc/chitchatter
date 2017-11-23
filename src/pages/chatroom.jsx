@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import React, { Component } from 'react'
 
 class ChatRoom extends Component {
   state = {
@@ -79,7 +78,7 @@ class ChatRoom extends Component {
         <div className="jumbotron jumbotron-fluid">
           <img src="https://image.ibb.co/gvqtiR/logo.png" className="Applogo2 example-content-secondary" alt="logo" style={{display : 'inline-block'}} />
           <h1 className="App-title2" style={{display : 'inline-block'}}>ChitChat</h1>
-          <button style={{display : 'inline-block'}} onClick={this.logOut}>Leave Room</button>
+          <button onClick={this.logOut} style={{display : 'inline-block'}}>Leave Room</button>
         </div>
 
       <div className="users container-fluid">
