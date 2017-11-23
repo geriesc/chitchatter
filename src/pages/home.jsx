@@ -1,13 +1,11 @@
 import React, {Component} from 'react';
 
-
 class Home extends Component{
     state = {
       username: "",
       room: ""
     }
     render(){
-      console.log('Home', this.state)
         return(
             
             <div>

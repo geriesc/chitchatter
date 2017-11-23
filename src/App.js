@@ -16,18 +16,9 @@ class App extends Component {
   }
 
   render() {
-    console.log('app', this.state)
     return (
       <div className="App">
-        <ul className="nav nav-list">
-        <li><NavLink to="/">
-            LOG IN 
-        </NavLink></li>
-
-        <li><NavLink to='ChatRoom'>
-            CHAT ROOM 
-        </NavLink></li>
-        </ul>
+      
         <Switch>
           <Route path="/chatroom" render={(locationProps) => (
             <ChatRoom {...locationProps} 
@@ -38,7 +29,8 @@ class App extends Component {
             <Home {...locationProps} login={this.login}/>
         )}/>
         </Switch>
-                </div>  
+        
+      </div>  
     );
   }
 }
