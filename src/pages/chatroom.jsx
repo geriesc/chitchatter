@@ -9,6 +9,7 @@ class ChatRoom extends Component {
   }
 
   componentWillMount() {
+
     if(!this.props.username || !this.props.room)
       return this.props.history.replace('/')
 
@@ -96,13 +97,29 @@ class ChatRoom extends Component {
         <div className="chatbox container">
             <div ref={(el) => this.chatNode = el} className="chatlogs">
             {
-              this.state.messages.map(message => (
-                <div className="chat">
-                  {/* <img className="user-photo" src="https://image.ibb.co/nQpP8R/cat1.jpg" /> */}
-                  <p className="chat-message">{message.message}</p>
-                  <p className="user1">{message.author}</p>
-                </div>
-              ))
+              this.state.messages.map(message => {
+                
+                if(message.author===this.props.username){
+                  return (
+                    <div className="yourChat">
+                    <p className="chat-message">{message.message}</p>
+                    <p className="user1">{message.author}</p>
+                  </div>
+                  )
+                 
+                }
+                else{
+                  return (
+                    <div className="chat">
+                    {/* <img className="user-photo" src="https://image.ibb.co/nQpP8R/cat1.jpg" /> */}
+                    <p className="chat-message">{message.message}</p>
+                    <p className="user1">{message.author}</p>
+                  </div>
+                  )
+                  
+                }
+                 
+              })
             }
           </div>
 
